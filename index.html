@@ -302,6 +302,113 @@
       margin-bottom: 22px;
     }
 
+    .deadline-extend-wrap {
+      position: relative;
+      z-index: 2;
+      margin: 0 auto 26px;
+    }
+
+    .deadline-extend-banner {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 26px 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 223, 148, 0.42);
+      background:
+        linear-gradient(135deg, rgba(255, 241, 187, 0.14), rgba(185, 139, 45, 0.10)),
+        linear-gradient(180deg, rgba(20, 16, 8, 0.65), rgba(20, 16, 8, 0.85));
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42), 0 0 32px rgba(255, 215, 110, 0.14);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .deadline-extend-banner::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,241,187,.7), rgba(185,139,45,.05) 40%, rgba(255,241,187,.6));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      opacity: .55;
+    }
+
+    .deadline-extend-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold-4));
+      color: #161616;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .14em;
+      box-shadow: 0 10px 22px rgba(226, 191, 103, 0.32);
+    }
+
+    .deadline-extend-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1a1a1a;
+      box-shadow: 0 0 10px rgba(0,0,0,.4);
+    }
+
+    .deadline-extend-lead {
+      margin: 14px auto 16px;
+      max-width: 640px;
+      color: #f5ecd2;
+      font-size: 14.5px;
+      line-height: 1.85;
+    }
+
+    .deadline-extend-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 223, 148, 0.35);
+      background: rgba(255, 241, 187, 0.06);
+    }
+
+    .deadline-extend-date-label {
+      color: var(--gold-4);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .deadline-extend-date-value {
+      color: #fff1bb;
+      font-family: "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(18px, 3.2vw, 24px);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-shadow: 0 0 18px rgba(255, 215, 110, 0.35);
+    }
+
+    @media (max-width: 640px) {
+      .deadline-extend-banner {
+        padding: 18px 18px 20px;
+        border-radius: 18px;
+      }
+      .deadline-extend-date {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 18px;
+        border-radius: 18px;
+      }
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -1423,6 +1530,16 @@
       </div>
     </div>
 
+    <div class="deadline-extend-wrap">
+      <div class="container">
+        <div class="deadline-extend-banner scroll-reveal">
+          <div class="deadline-extend-badge">募集期間延長決定！</div>
+          <p class="deadline-extend-lead">より多くの皆様に挑戦の機会をお届けし、新たな可能性と出会うため、オーディションの募集期間を延長いたします。<br>「少し迷っていた」という方も、ぜひこの機会にご応募ください！</p>
+          <div class="deadline-extend-date"><span class="deadline-extend-date-label">新・応募締切</span><span class="deadline-extend-date-value">2026年8月24日（月）23:59まで</span></div>
+        </div>
+      </div>
+    </div>
+
     <div class="container hero-grid">
       <div class="hero-copy scroll-reveal">
         <span class="eyebrow">Future Star Project</span>
@@ -1470,7 +1587,7 @@
           </div>
           <div class="stat-item">
             <strong>ENTRY DEADLINE</strong>
-            2026年7月31日（金）23:59まで
+            2026年8月24日（月）23:59まで
           </div>
           <div class="stat-item">
             <strong>PUBLIC AUDITION</strong>
@@ -1775,7 +1892,7 @@
         <div class="countdown-wrap scroll-reveal">
           <span class="tag">Deadline</span>
           <h2 style="margin-bottom:8px;">応募締切</h2>
-          <div class="deadline gold-text">2026年7月31日（金）23:59まで</div>
+          <div class="deadline gold-text">2026年8月24日（月）23:59まで</div>
           <p class="muted">残り期間を確認して、ベストなタイミングを逃さないでください。</p>
           <div class="countdown" id="countdown">
             <div class="time-box"><strong id="days">--</strong><span>日</span></div>
@@ -1882,7 +1999,7 @@
     <div class="sticky-cta-inner">
       <div class="sticky-copy">
         <strong>夢への第一歩を、今ここから。</strong>
-        応募締切：2026年7月31日（金）23:59
+        応募締切：2026年8月24日（月）23:59
       </div>
       <a class="btn" href="https://line.me/R/ti/p/@221wpsag" target="_blank" rel="noopener">今すぐ応募する</a>
     </div>
@@ -1900,7 +2017,7 @@
 
     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-    const deadline = new Date('2026-07-31T23:59:00+09:00').getTime();
+    const deadline = new Date('2026-08-24T23:59:00+09:00').getTime();
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
@@ -1942,6 +2059,6 @@
       window.addEventListener('scroll', updateParallax, { passive: true });
     }
   </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79"}' crossorigin="anonymous"></script>
 </body>
 </html>
